@@ -1,0 +1,43 @@
+:root {
+    /* Backgrounds */
+    --bg-primary: #0b0e14;
+    --bg-secondary: #1a1f29;
+    --bg-tertiary: #242b38;
+  
+    /* Brand Colors */
+    --color-primary: #00d4ff; /* Electric Blue */
+    --color-secondary: #9d50bb; /* Neon Purple */
+    --color-accent: #ff3e4d; /* Alert Red */
+  
+    /* Text Colors */
+    --text-main: #e0e6ed;
+    --text-dim: #8892b0;
+    --text-dark: #000000;
+  
+    /* Borders & Dividers */
+    --border-glow: rgba(0, 212, 255, 0.2);
+    --border-subtle: #2d333f;
+  }
+  
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-main);
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .product-card {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-subtle);
+    transition: border-color 0.3s ease;
+  }
+  
+  .product-card:hover {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 15px var(--border-glow);
+  }
+  
+  .btn-buy {
+    background-color: var(--color-primary);
+    color: var(--text-dark);
+    font-weight: bold;
+  }

@@ -1,0 +1,106 @@
+/* ===========================
+   CART PAGE CSS
+   =========================== */
+
+.cart-box {
+  background: white;
+  border-radius: 18px;
+  padding: 25px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+.cart-item {
+  display: flex;
+  gap: 15px;
+  padding: 15px;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+  margin-bottom: 14px;
+  background: #f9fafb;
+}
+
+.cart-item img {
+  width: 95px;
+  height: 95px;
+  border-radius: 16px;
+  object-fit: cover;
+  border: 1px solid #e5e7eb;
+}
+
+.cart-item h6 {
+  font-size: 15px;
+  font-weight: 800;
+  margin-bottom: 5px;
+}
+
+.cart-item p {
+  font-size: 13px;
+  margin-bottom: 3px;
+  color: #6b7280;
+}
+
+.qty-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.qty-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  border: none;
+  background: #111;
+  color: white;
+  font-weight: 700;
+}
+
+.qty-btn:hover {
+  opacity: 0.85;
+}
+
+.qty-number {
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.remove-btn {
+  background: transparent;
+  border: none;
+  color: #dc2626;
+  font-size: 18px;
+}
+
+.remove-btn:hover {
+  color: #b91c1c;
+}
+
+.total-box {
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  padding: 14px 16px;
+  border-radius: 14px;
+  color: white;
+}
+
+.sticky-summary {
+  position: sticky;
+  top: 90px;
+}
+
+.empty-cart {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.empty-cart i {
+  font-size: 55px;
+  color: #9ca3af;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .sticky-summary {
+    position: static;
+  }
+}

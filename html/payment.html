@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Payment - Liberty Electronics</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+  <!-- Theme CSS -->
+  <link rel="stylesheet" href="/Css/theme.css">
+
+  <!-- Payment CSS -->
+  <link rel="stylesheet" href="/Css/payment.css">
+</head>
+
+<body>
+
+  <div id="header"></div>
+
+  <!-- PAYMENT PAGE -->
+  <section class="py-5">
+    <div class="container">
+
+      <div class="text-center mb-5">
+        <h1 class="section-title">Secure Checkout</h1>
+        <p class="section-subtitle mx-auto">
+          Complete your purchase safely. Liberty Electronics ensures secure and trusted payments.
+        </p>
+      </div>
+
+      <div class="row g-4">
+
+        <!-- LEFT SIDE -->
+        <div class="col-lg-8">
+
+          <!-- CUSTOMER DETAILS -->
+          <div class="payment-box mb-4">
+            <h4 class="fw-bold mb-3"><i class="fa-solid fa-user me-2"></i>Customer Details</h4>
+
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label fw-semibold">Full Name <span class="text-danger">*</span></label>
+                <input type="text" id="fullName" class="form-control" placeholder="e.g. Ali Hassan">
+                <div class="invalid-feedback">Enter a valid name (letters only, min 3 characters).</div>
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label fw-semibold">Phone Number <span class="text-danger">*</span></label>
+                <input type="text" id="phone" class="form-control" placeholder="03XX-XXXXXXX" maxlength="13">
+                <div class="invalid-feedback">Enter a valid Pakistani mobile number.</div>
+              </div>
+
+              <div class="col-md-12">
+                <label class="form-label fw-semibold">Email Address <span class="text-danger">*</span></label>
+                <input type="email" id="email" class="form-control" placeholder="example@gmail.com">
+                <div class="invalid-feedback">Enter a valid email address.</div>
+              </div>
+
+              <div class="col-md-12">
+                <label class="form-label fw-semibold">Delivery Address <span class="text-danger">*</span></label>
+                <textarea id="address" class="form-control" rows="3" placeholder="House No, Street, Area, District..."></textarea>
+                <div class="invalid-feedback">Please enter your full address (min 10 characters).</div>
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label fw-semibold">City <span class="text-danger">*</span></label>
+                <input type="text" id="city" class="form-control" placeholder="e.g. Karachi">
+                <div class="invalid-feedback">Enter a valid city name.</div>
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label fw-semibold">Postal Code <span class="text-muted small">(optional)</span></label>
+                <input type="text" id="postalCode" class="form-control" placeholder="74200" maxlength="5">
+                <div class="invalid-feedback">Postal code must be 5 digits.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- PAYMENT METHOD -->
+          <div class="payment-box">
+
+            <h4 class="fw-bold mb-3"><i class="fa-solid fa-credit-card me-2"></i>Payment Method</h4>
+
+            <div class="payment-methods">
+
+              <div class="form-check payment-option" id="cardOption">
+                <input class="form-check-input" type="radio" name="paymentMethod" id="cardPay" checked>
+                <label class="form-check-label fw-semibold" for="cardPay">
+                  <i class="fa-solid fa-credit-card me-2 text-primary"></i>Credit / Debit Card
+                </label>
+              </div>
+
+              <div class="form-check payment-option" id="cashOption">
+                <input class="form-check-input" type="radio" name="paymentMethod" id="cashPay">
+                <label class="form-check-label fw-semibold" for="cashPay">
+                  <i class="fa-solid fa-money-bill-wave me-2 text-success"></i>Cash on Delivery
+                </label>
+              </div>
+
+            </div>
+
+            <!-- CARD FORM -->
+            <div id="cardForm" class="mt-4">
+
+              <div class="row g-3">
+
+                <div class="col-md-12">
+                  <label class="form-label fw-semibold">Card Holder Name</label>
+                  <input type="text" id="cardName" class="form-control" placeholder="As printed on card">
+                  <div class="invalid-feedback">Enter the cardholder name.</div>
+                </div>
+
+                <div class="col-md-12">
+                  <label class="form-label fw-semibold">Card Number</label>
+                  <div class="card-input-box">
+                    <input type="text" id="cardNumber" class="form-control" placeholder="1234 5678 9012 3456" maxlength="19">
+                    <span id="cardTypeIcon"><i class="fa-solid fa-credit-card"></i></span>
+                  </div>
+                  <div class="invalid-feedback">Card number must be 16 digits.</div>
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label fw-semibold">Expiry (MM/YY)</label>
+                  <input type="text" id="expiry" class="form-control" placeholder="08/28" maxlength="5">
+                  <div class="invalid-feedback">Use MM/YY format and ensure the card isn't expired.</div>
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label fw-semibold">CVV</label>
+                  <div class="position-relative">
+                    <input type="password" id="cvv" class="form-control" placeholder="•••" maxlength="4">
+                  </div>
+                  <div class="form-text text-muted">3 or 4 digits on the back of your card.</div>
+                  <div class="invalid-feedback">CVV must be 3 or 4 digits.</div>
+                </div>
+
+              </div>
+
+              <div class="secure-note mt-3">
+                <i class="fa-solid fa-lock me-2"></i>
+                Your card details are encrypted and securely processed.
+              </div>
+
+            </div>
+
+            <!-- CASH ON DELIVERY INFO BOX -->
+            <div id="codForm" class="mt-4" style="display: none;">
+              <div class="cod-info-box">
+                <div class="cod-icon">
+                  <i class="fa-solid fa-truck-fast"></i>
+                </div>
+                <div>
+                  <h6 class="fw-bold mb-1">Cash on Delivery Selected</h6>
+                  <p class="mb-1 text-muted small">Your order will be delivered to the address you provided above. Please have the exact amount ready.</p>
+                  <ul class="cod-checklist">
+                    <li><i class="fa-solid fa-check text-success me-2"></i>Delivery within 3–5 working days</li>
+                    <li><i class="fa-solid fa-check text-success me-2"></i>Pay cash when your order arrives</li>
+                    <li><i class="fa-solid fa-check text-success me-2"></i>Free returns within 7 days</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- ERROR MESSAGE -->
+            <div id="errorBox" class="alert alert-danger mt-4 d-none"></div>
+
+            <!-- PAY BUTTON -->
+            <button class="btn btn-dark w-100 mt-3 py-3 fw-semibold" id="payBtn">
+              <i class="fa-solid fa-lock me-2"></i>Confirm Payment
+            </button>
+
+          </div>
+
+        </div>
+
+        <!-- RIGHT SIDE -->
+        <div class="col-lg-4">
+
+          <!-- ORDER SUMMARY -->
+          <div class="payment-box sticky-summary">
+            <h4 class="fw-bold mb-3"><i class="fa-solid fa-receipt me-2"></i>Order Summary</h4>
+
+            <div id="cartItemsBox" class="cart-items-box">
+              <!-- Items load here -->
+            </div>
+
+            <hr>
+
+            <div class="d-flex justify-content-between mb-2">
+              <span class="text-muted">Subtotal</span>
+              <span id="subtotalText" class="fw-semibold">Rs. 0</span>
+            </div>
+
+            <div class="d-flex justify-content-between mb-2">
+              <span class="text-muted">Delivery Charges</span>
+              <span id="deliveryText" class="fw-semibold">Rs. 0</span>
+            </div>
+
+            <div class="d-flex justify-content-between mb-3">
+              <span class="text-muted">Tax (2%)</span>
+              <span id="taxText" class="fw-semibold">Rs. 0</span>
+            </div>
+
+            <div class="total-box d-flex justify-content-between align-items-center">
+              <span class="fw-bold fs-5">Total</span>
+              <span id="totalText" class="fw-bold fs-5">Rs. 0</span>
+            </div>
+
+            <div class="mt-4 trust-box">
+              <p class="mb-2 fw-semibold">We Accept</p>
+              <div class="trust-icons">
+                <i class="fa-brands fa-cc-visa"></i>
+                <i class="fa-brands fa-cc-mastercard"></i>
+                <i class="fa-brands fa-cc-amex"></i>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SUCCESS MODAL -->
+  <div class="modal fade" id="successModal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content p-4 text-center">
+        <div class="success-icon mb-3">
+          <i class="fa-solid fa-circle-check"></i>
+        </div>
+        <h4 class="fw-bold">Order Placed Successfully!</h4>
+        <p class="text-muted mb-1">Thank you for shopping with Liberty Electronics.</p>
+        <p class="text-muted mb-4 small">A confirmation will be sent to your email. Your order will arrive in 3–5 working days.</p>
+        <button class="btn btn-dark w-100 py-2" id="goHomeBtn">
+          <i class="fa-solid fa-house me-2"></i>Back to Home
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer"></div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Layout -->
+  <script src="/Javascript/layout.js"></script>
+
+  <!-- Payment JS -->
+  <script src="/Javascript/payment.js"></script>
+
+</body>
+
+</html>

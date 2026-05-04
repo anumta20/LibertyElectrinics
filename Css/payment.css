@@ -1,0 +1,134 @@
+/* ===========================
+   PAYMENT PAGE CSS
+   =========================== */
+
+.payment-box {
+  background: white;
+  border-radius: 18px;
+  padding: 25px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+.payment-methods {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.payment-option {
+  background: #f9fafb;
+  padding: 12px 16px;
+  border-radius: 14px;
+  border: 1px solid #e5e7eb;
+  width: 100%;
+  cursor: pointer;
+}
+
+.payment-option input {
+  cursor: pointer;
+}
+
+.card-input-box {
+  position: relative;
+}
+
+.card-input-box input {
+  padding-right: 50px;
+}
+
+#cardTypeIcon {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: #6b7280;
+}
+
+.secure-note {
+  background: #ecfdf5;
+  border: 1px solid #10b981;
+  padding: 12px;
+  border-radius: 12px;
+  font-size: 14px;
+  color: #065f46;
+}
+
+.cart-items-box {
+  max-height: 240px;
+  overflow-y: auto;
+  padding-right: 5px;
+}
+
+.cart-item {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #f3f4f6;
+  padding-bottom: 10px;
+}
+
+.cart-item img {
+  width: 55px;
+  height: 55px;
+  border-radius: 12px;
+  object-fit: cover;
+  border: 1px solid #e5e7eb;
+}
+
+.cart-item h6 {
+  font-size: 14px;
+  margin-bottom: 3px;
+  font-weight: 700;
+}
+
+.cart-item p {
+  font-size: 13px;
+  margin-bottom: 0;
+  color: #6b7280;
+}
+
+.total-box {
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  padding: 14px 16px;
+  border-radius: 14px;
+  color: white;
+}
+
+.trust-box {
+  background: #f9fafb;
+  padding: 15px;
+  border-radius: 14px;
+  border: 1px solid #e5e7eb;
+  text-align: center;
+}
+
+.trust-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  font-size: 28px;
+  color: #111;
+}
+
+.sticky-summary {
+  position: sticky;
+  top: 90px;
+}
+
+.success-icon {
+  font-size: 55px;
+  color: #16a34a;
+}
+
+.modal-content {
+  border-radius: 18px;
+}
+
+/* Responsive Fix */
+@media (max-width: 991px) {
+  .sticky-summary {
+    position: static;
+  }
+}

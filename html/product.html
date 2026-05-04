@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details - Liberty Electronics</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/Css/theme.css">
+  <link rel="stylesheet" href="/Css/shop.css">
+</head>
+
+<body>
+
+  <div id="header"></div>
+
+  <!-- PRODUCT DETAILS -->
+  <div class="container my-5">
+
+    <div class="row g-5 align-items-center">
+
+      <!-- IMAGE -->
+      <div class="col-lg-6 text-center">
+        <div class="p-4 bg-light rounded shadow-sm position-relative">
+
+          <img id="productImg" src="" class="img-fluid" style="max-height: 420px; object-fit: contain;">
+
+          <!-- Added To Cart Popup -->
+          <div id="addedPopup"
+            style="position:absolute; top:20px; left:50%; transform:translateX(-50%); background:#111; color:white; padding:10px 18px; border-radius:25px; font-weight:600; font-size:14px; display:none;">
+            ✅ Added to cart
+          </div>
+
+        </div>
+      </div>
+
+      <!-- DETAILS -->
+      <div class="col-lg-6">
+
+        <h2 class="fw-bold" id="productName"></h2>
+        <p class="text-muted mb-2" id="productBrand"></p>
+
+        <h4 class="fw-bold text-success mb-3">
+          Rs. <span id="productPrice"></span> PKR
+        </h4>
+
+        <!-- STORAGE -->
+        <h6 class="fw-bold">Storage Options</h6>
+        <select id="storageSelect" class="form-select mb-4" style="max-width: 250px;"></select>
+
+        <!-- COLORS -->
+        <h6 class="fw-bold">Choose Color</h6>
+        <div class="d-flex flex-wrap gap-2 mb-4" id="colorBox"></div>
+
+        <!-- BUTTONS -->
+        <div class="d-flex flex-column gap-2">
+
+          <button class="btn btn-dark w-100 py-2 fw-semibold" id="addToCartBtn">
+            <i class="fa-solid fa-cart-shopping me-2"></i> Add to Cart
+          </button>
+
+          <a id="manualDownloadBtn" class="btn btn-outline-dark w-100 py-2 fw-semibold" download>
+            <i class="fa-solid fa-file-arrow-down me-2"></i> Download Manual
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- SPECS -->
+    <div class="mt-5">
+      <h3 class="fw-bold mb-3">Specifications</h3>
+
+      <div class="table-responsive">
+        <table class="table table-bordered">
+          <tbody id="specsTable"></tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+
+  <div id="footer"></div>
+
+  <!-- JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script src="/Javascript/layout.js"></script>
+  <script src="/Javascript/products.js"></script>
+  <script src="/Javascript/product.js"></script>
+   
+</body>
+
+</html>
